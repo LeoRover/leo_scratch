@@ -81,9 +81,7 @@ const base = {
                         return [
                             postcssImport,
                             postcssVars,
-                            autoprefixer({
-                                browsers: ['last 3 versions', 'Safari >= 8', 'iOS >= 8']
-                            })
+                            autoprefixer()
                         ];
                     }
                 }
