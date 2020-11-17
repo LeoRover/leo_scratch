@@ -33,3 +33,9 @@ sudo npm link scratch-parser scratch-vm
 cd ..
 
 popd
+
+install -v -m 755 files/scratch-start "/usr/bin/"
+install -v -m 755 files/scratch-stop "/usr/bin/"
+install -v -m 644 files/scratch.service "/etc/systemd/system/"
+
+systemctl enable scratch

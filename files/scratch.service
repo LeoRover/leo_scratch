@@ -1,0 +1,10 @@
+[Unit]
+Description="scratch server"
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/scratch-start
+
+[Install]
+WantedBy=multi-user.target
