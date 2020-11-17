@@ -1,19 +1,18 @@
 #!/bin/bash -e
 
-
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install nodejs
 nodejs --version
 
-rm -rf /home/$USER/leo_scratch
-mkdir -p -m 775 "/home/$USER/leo_scratch"
+rm -rf /opt/leo_scratch
+mkdir -p -m 775 "/opt/leo_scratch"
 
-cp -r repos/scratch3-ros-gui /home/$USER/leo_scratch
-cp -r repos/scratch3-ros-parser /home/$USER/leo_scratch
-cp -r repos/scratch3-ros-vm /home/$USER/leo_scratch
-cp -r example /home/$USER/leo_scratch
+cp -r repos/scratch3-ros-gui /opt/leo_scratch
+cp -r repos/scratch3-ros-parser /opt/leo_scratch
+cp -r repos/scratch3-ros-vm /opt/leo_scratch
+cp -r example /opt/leo_scratch
 
-pushd /home/$USER/leo_scratch
+pushd /opt/leo_scratch
 
 cd scratch3-ros-parser
 npm install
