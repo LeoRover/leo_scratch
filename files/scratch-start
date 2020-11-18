@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/pi/leo_scratch/scratch3-ros-gui
+cd /opt/leo_scratch/scratch3-ros-gui
 npm start
 
 PID=$!
