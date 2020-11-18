@@ -1,8 +1,11 @@
 #!/bin/bash -e
 
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+# curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+# sudo apt install nodejs
+# nodejs --version
+
+sudo apt update
 sudo apt install nodejs
-nodejs --version
 
 rm -rf /opt/leo_scratch
 mkdir -p -m 775 "/opt/leo_scratch"
