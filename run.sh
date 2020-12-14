@@ -1,8 +1,13 @@
 #!/bin/bash -e
 
-sudo apt update
+if [ "$(id -u)" != "0" ]; then
+	echo "Please run this script as root" 1>&2
+	exit 1
+fi
+
+apt update
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt install nodejs
+apt install nodejs
 nodejs --version
 npm --version
 
@@ -21,19 +26,19 @@ pushd /opt/leo_scratch
 
 cd scratch3-ros-parser
 npm install
-sudo npm link
+npm link
 cd ..
 
 cd scratch3-ros-vm
 npm install
-sudo npm link
-sudo npm link scratch-parser
+npm link
+npm link scratch-parser
 cd ..
 
 cd scratch3-ros-gui
 npm install
-sudo npm link
-sudo npm link scratch-parser scratch-vm
+npm link
+npm link scratch-parser scratch-vm
 cd ..
 
 popd
